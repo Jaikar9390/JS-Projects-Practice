@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="index.css" />
+    <title>Score Game</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e6e6e6;
+      display: flex;
+      justify-content: space-between;
+      padding: 40px;
+    }
+
+    .left {
+      width: 50%;
+      text-align: center;
+    }
+
+    .right {
+      width: 40%;
+    }
+    .right h3 {
+      text-align: center;
+    }
+
+    h2 {
+      margin: 10px 0;
+    }
+
+    .box {
+      background: #aaa;
+      padding: 30px;
+      margin: 10px auto;
+      width: 200px;
+      font-size: 24px;
+    }
+
+    .min-max {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .min,
+    .max {
+      width: 120px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: white;
+    }
+
+    .min {
+      background: red;
+    }
+    .max {
+      background: green;
+    }
+
+    .score-box {
+      background: #aaa;
+      width: 250px;
+      margin: 10px auto;
+      padding: 20px;
+      font-size: 30px;
+    }
+
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .keypad button {
+      height: 60px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      color: black;
+    }
+
+    .odd {
+      background: #6b8e23;
+    }
+    .even {
+      background: orange;
+    }
+    .zero {
+      background: purple;
+      color: white;
+      grid-column: 2;
+    }
+
+    .enter {
+      margin-top: 20px;
+      background: black;
+      color: white;
+      padding: 15px 60px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .right h1 {
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .actions button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 15px;
+      background: black;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <div class="left">
+      <h2>TOTAL</h2>
+      <div class="box" id="total" onClick="total()">-</div>
+
+      <div class="min-max">
+        <div>
+          <div class="min" id="min">-</div>
+          <p>MIN</p>
+        </div>
+        <div>
+          <div class="max" id="max">-</div>
+          <p>MAX</p>
+        </div>
+      </div>
+
+      <h2>SCORE</h2>
+      <div class="score-box" id="score"></div>
+
+      <div class="keypad">
+        <button class="odd">1</button>
+        <button class="even">2</button>
+        <button class="odd">3</button>
+        <button class="even">4</button>
+        <button class="even">5</button>
+        <button class="even">6</button>
+        <button class="odd">7</button>
+        <button class="even">8</button>
+        <button class="odd">9</button>
+        <button class="zero">0</button>
+      </div>
+
+      <button class="enter" id="enter">ENTER</button>
+    </div>
+
+    <div class="right">
+      <h1>GAME SCORES</h1>
+      <!-- <h3>Game 1-30</h3>
+      <h3>Game 2-50</h3>
+      <h3>Game 3-100</h3>
+      <h3>Game 4-300</h3>
+      <h3>Game 5-20</h3>
+      <h3>Game 5-50</h3>
+      <h3>Game 5-50</h3> -->
+      <ul id="list" style:{{text-align:center}}></ul>
+
+      <div class="actions">
+        <!-- <h1>GAME SCORES</h1> -->
+
+        <button id="removeAll" onClick="removeAll()">REMOVE ALL</button>
+        <button id="removeOdd" onclick="removeOdd()">REMOVE ODD</button>
+        <button id="removeEven" onclick="removeEven()">REMOVE EVEN</button>
+        <button id="removeLast" onclick="removeLast()">REMOVE LAST</button>
+      </div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
